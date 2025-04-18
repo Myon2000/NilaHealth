@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@custom-variant dark (&:where(.dark, .dark *));
+html {
+    transition: background-color 0.4s ease, color 0.4s ease, filter 0.2s ease;
+}
+
+html.dark {
+    filter: brightness(0.95);
+}
+
+body {
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+main, nav, footer {
+    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+#theme-toggle {
+    transition: all 0.4s ease;
+  }
+  
+#theme-toggle:hover {
+    transform: rotate(30deg) scale(1.1);
+    background: rgba(255, 230, 0, 0.2);
+    border-color: rgba(255, 230, 0, 0.5);
+  }
+  
