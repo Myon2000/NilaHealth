@@ -15,12 +15,10 @@
 
     // Profile management behind auth
     Route::middleware('auth')->group(function () {
-        Route::get('/', [HomepageController::class, 'index'])
-        ->middleware(['auth', 'verified'])
-        ->name('home');
+        Route::get('/', [HomepageController::class, 'index'])->name('home');
 
         Route::get('/admin', [AdminController::class, 'index'])->name('admin.dashboard');
-        
+
         Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
         Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
         Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
